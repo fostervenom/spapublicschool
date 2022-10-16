@@ -37993,7 +37993,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-footer .u-layout-wrap-1 {
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 0;
   position: relative;
 }
 
@@ -38019,7 +38019,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-footer .u-layout-cell-2 {
-  min-height: 400px;
+  min-height: 625px;
 }
 
 .u-footer .u-container-layout-2 {
@@ -38032,7 +38032,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-footer .u-map-1 {
   width: 290px;
-  height: 274px;
+  height: 400px;
   margin: 33px auto 0;
 }
 
@@ -38048,106 +38048,12 @@ a.u-link.u-text-hover-grey-90:hover {
   margin: 0 15px;
 }
 
-.u-footer .u-countdown-1 {
-  transition-duration: 0.5s;
-  box-shadow: 2px 0 0 0 rgba(0,0,0,0);
-  margin: 109px auto 0;
+.u-footer .u-custom-html-1 {
+  margin: 30px auto 0 15px;
 }
 
-.u-footer .u-countdown-counter-1 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-label-1 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-.u-footer .u-countdown-separator-1 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-counter-2 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-label-2 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-.u-footer .u-countdown-separator-2 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-counter-3 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-label-3 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-.u-footer .u-countdown-separator-3 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-counter-4 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-label-4 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-.u-footer .u-countdown-separator-4 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-counter-5 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-label-5 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-.u-footer .u-countdown-separator-5 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-counter-6 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.u-footer .u-countdown-label-6 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
+.u-footer .u-login-1 {
+  margin: 30px auto 60px;
 }
 @media (max-width: 1199px) {
   .u-footer .u-sheet-1 {
@@ -38163,7 +38069,7 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 
   .u-footer .u-layout-cell-2 {
-    min-height: 330px;
+    min-height: 515px;
   }
 
   .u-footer .u-map-1 {
@@ -38176,7 +38082,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 @media (max-width: 991px) {
   .u-footer .u-sheet-1 {
-    min-height: 373px;
+    min-height: 220px;
   }
 
   .u-footer .u-layout-cell-1 {
@@ -38201,7 +38107,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 @media (max-width: 767px) {
   .u-footer .u-sheet-1 {
-    min-height: 935px;
+    min-height: 320px;
   }
 
   .u-footer .u-container-layout-2 {
@@ -38214,20 +38120,6 @@ a.u-link.u-text-hover-grey-90:hover {
     padding-right: 10px;
   }
 }
-@media (max-width: 575px) {
-  .u-footer .u-sheet-1 {
-    min-height: 513px;
-  }
-}
-.u-footer .u-countdown-1, .u-footer .u-countdown-1:before, .u-footer .u-countdown-1 > .u-container-layout:before {
-    transition-property: fill, color, background-color, stroke-width, border-style, border-width, border-top-width, border-left-width, border-right-width, border-bottom-width, custom-border, borders, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, image-zoom, background-size, background-position
-}
-.u-footer .u-countdown-1.u-countdown-1.u-countdown-1:hover {
-    box-shadow: 2px 2px 8px 0px rgba(128,128,128,1) !important
-}
-.u-footer .u-countdown-1.u-countdown-1.u-countdown-1.hover {
-    box-shadow: 2px 2px 8px 0px rgba(128,128,128,1) !important
-} 
 
 
  /*begin-variables base-font-size*/ 
