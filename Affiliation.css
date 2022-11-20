@@ -196,7 +196,7 @@
 }
 
 .u-section-2 .u-accordion-pane-1 {
-  min-height: 304px;
+  min-height: 347px;
   background-image: none;
   height: auto;
 }
@@ -259,7 +259,7 @@
 }
 
 .u-section-2 .u-accordion-pane-2 {
-  min-height: 304px;
+  min-height: 347px;
   background-image: none;
   height: auto;
 }
@@ -372,6 +372,7 @@
 
 .u-section-2 .u-btn-6 {
   border-style: none;
+  font-weight: 700;
   margin: 99px 53px 0 auto;
   padding: 0;
 }
@@ -394,7 +395,7 @@
 }
 
 .u-section-2 .u-accordion-pane-3 {
-  min-height: 304px;
+  min-height: 347px;
   background-image: none;
   height: auto;
 }
@@ -461,7 +462,7 @@
 }
 
 .u-section-2 .u-accordion-pane-4 {
-  min-height: 304px;
+  min-height: 347px;
   background-image: none;
   height: auto;
 }
@@ -500,6 +501,10 @@
   background-image: none;
 }
 
+.u-section-2 .u-table-cell-94 {
+  background-image: none;
+}
+
 .u-block-dce4-170 {
   background-image: none;
 }
@@ -521,7 +526,7 @@
 }
 
 .u-section-2 .u-accordion-pane-5 {
-  min-height: 304px;
+  min-height: 347px;
   background-image: none;
   height: auto;
 }
@@ -536,10 +541,6 @@
 
 .u-section-2 .u-table-header-5 {
   font-weight: 700;
-  background-image: none;
-}
-
-.u-section-2 .u-table-cell-97 {
   background-image: none;
 }
 
@@ -564,6 +565,10 @@
 }
 
 .u-section-2 .u-table-cell-115 {
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-118 {
   background-image: none;
 }
 
