@@ -140,7 +140,6 @@
 
 .u-section-2 .u-repeater-1 {
   grid-gap: 10px 10px;
-  grid-auto-columns: 100%;
   grid-template-columns: 100%;
   min-height: 120px;
 }
@@ -163,7 +162,6 @@
 
 .u-section-3 .u-repeater-1 {
   grid-gap: 10px 10px;
-  grid-auto-columns: 100%;
   grid-template-columns: 100%;
   min-height: 375px;
 }
@@ -348,16 +346,22 @@
 
 .u-section-4 .u-text-1 {
   font-weight: 700;
-  margin: 38px auto 0;
+  margin: 0 auto;
+}
+
+.u-section-4 .u-text-2 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 20px auto 0;
 }.u-section-5 .u-sheet-1 {
-  min-height: 567px;
+  min-height: 236px;
 }
 
 .u-section-5 .u-custom-html-1 {
   height: auto;
-  min-height: 516px;
+  min-height: 185px;
   width: 759px;
-  margin: 26px auto 51px;
+  margin: 26px auto;
 }
 
 @media (max-width: 991px) {

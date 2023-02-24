@@ -40621,6 +40621,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-footer .u-btn-1 {
   background-image: none;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
   padding: 0;
 }
 @media (max-width: 1199px) {
