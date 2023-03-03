@@ -1,0 +1,57 @@
+/* slice width */
+/* number of slices */
+/* loader dimensions, no padding */
+/* half the angle corresp to an edge arc */
+/* padding */
+/* radius of circle edge arc is on */
+/* mask size */
+/* full loader dimensions incl paddings */
+/* background hash opacity */
+body {
+  margin: 0;
+  height: 100vh;
+  perspective: 20em;
+  background: repeating-linear-gradient(45deg, rgba(238, 120, 110, 0.65) 0, rgba(238, 120, 110, 0.65) 2px, transparent 0, transparent 7px), repeating-linear-gradient(-45deg, rgba(252, 238, 181, 0.65) 0, rgba(252, 238, 181, 0.65) 2px, transparent 0, transparent 7px) #A2CCB6;
+  background-blend-mode: overlay;
+}
+
+.loader {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: rotate(-45deg);
+  transform-style: preserve-3d;
+}
+.loader:before, .loader:after {
+  --i: 0;
+  --s: calc(1 - 2*var(--i));
+  position: absolute;
+  margin: -7.05526em;
+  padding: 0.55526em;
+  width: 13em;
+  height: 13em;
+  transform: scaley(var(--s)) rotatey(0deg);
+  background: linear-gradient(90deg, #ee786e, #fceeb5, #fceeb5, #ee786e, #ee786e) calc(var(--s)*28.22104em) 50%/ 56.44209em 100%;
+  --g: radial-gradient(closest-side, #ff0000 calc(100% - 1px), rgba(0, 0, 0, 0) 100%);
+  --m: linear-gradient(#ff0000 3.80526em, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7.05526em, #ff0000 0%, #ff0000 10.30526em, rgba(0, 0, 0, 0) 0%), linear-gradient(#ff0000, #ff0000), var(--g) 50% -89.64559em, var(--g) 50% 13.55526em, var(--g) -89.64559em 50%, var(--g) 13.55526em 50%;
+  -webkit-mask: var(--m);
+  -webkit-mask-size: 90.20085em 90.20085em;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-composite: source-in, xor, xor, xor, xor, xor;
+  mask: var(--m);
+  mask-size: 90.20085em 90.20085em;
+  mask-repeat: no-repeat;
+  mask-composite: intersect, exclude, add, add, add, add;
+  animation: ani 1s ease-in-out infinite;
+  content: "";
+}
+.loader:after {
+  --i: 1;
+}
+
+@keyframes ani {
+  0% {
+    transform: scaley(var(--s)) rotatey(calc(var(--s)*.5turn));
+    background-position: 0px 50%;
+  }
+}
