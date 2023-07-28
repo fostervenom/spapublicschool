@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Viewer</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    #resultDetails {
+      margin-top: 40px;
+    }
+
+    #resultDetails h2 {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    #resultDetails p {
+      margin-bottom: 10px;
+    }
+
+    #resultDetails span {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Result Viewer</h1>
+    <div class="form-group">
+      <label for="classSelect">Select Class:</label>
+      <select class="form-control" id="classSelect">
+        <option value="">Select Class</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="studentSelect">Select Student:</label>
+      <select class="form-control" id="studentSelect">
+        <option value="">Select Student</option>
+      </select>
+    </div>
+    <div id="resultDetails" class="d-none">
+      <h2>Result Details</h2>
+      <p>Class: <span id="classValue"></span></p>
+      <p>Student's Name: <span id="studentValue"></span></p>
+      <p>Hindi: <span id="hiValue"></span></p>
+      <p>English: <span id="enValue"></span></p>
+      <p>Mathematics: <span id="mathValue"></span></p>
+      <p>Environment Education: <span id="evsValue"></span></p>
+      <p>Computer Education: <span id="comValue"></span></p>
+      <p>General Knowledge: <span id="gkValue"></span></p>
+      <p>Moral Education: <span id="meValue"></span></p>
+      <p>Drawing: <span id="drValue"></span></p>
+      <p>Marks Obtained: <span id="moValue"></span></p>
+      <p>Maximum Marks: <span id="mmValue"></span></p>
+      <p>Percentage: <span id="percentageValue"></span></p>
+      <p>Grade: <span id="gradeValue"></span></p>
+    </div>
+  </div>
+
+  <!-- Include jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Function to populate the class dropdown
+      function populateClassDropdown(data) {
+        const classes = data.map((student) => student.Class);
+        const uniqueClasses = Array.from(new Set(classes));
+        const classSelect = $('#classSelect');
+        uniqueClasses.forEach((className) => {
+          classSelect.append(`<option value="${className}">${className}</option>`);
+        });
+      }
+
+      // Function to populate the student dropdown based on the selected class
+      function populateStudentDropdown(data, selectedClass) {
+        const students = data.filter((student) => student.Class === selectedClass);
+        const studentSelect = $('#studentSelect');
+        studentSelect.empty();
+        studentSelect.append('<option value="">Select Student</option>');
+        students.forEach((student) => {
+          studentSelect.append(`<option value="${student["Student's Name "]}">${student["Student's Name "]}</option>`);
+        });
+      }
+
+      // Function to show the result details
+      function showResultDetails(studentData) {
+        $('#classValue').text(studentData.Class);
+        $('#studentValue').text(studentData["Student's Name "]);
+        $('#hiValue').text(studentData.Hi);
+        $('#enValue').text(studentData.En);
+        $('#mathValue').text(studentData.Math);
+        $('#evsValue').text(studentData.EVS);
+        $('#comValue').text(studentData.Com);
+        $('#gkValue').text(studentData.GK);
+        $('#meValue').text(studentData.ME);
+        $('#drValue').text(studentData["Dr."]);
+        $('#moValue').text(studentData.MO);
+        $('#mmValue').text(studentData.MM);
+
+        // Format percentage to two decimal places
+        const formattedPercentage = (studentData['%'] * 100).toFixed(2);
+        $('#percentageValue').text(`${formattedPercentage}%`);
+
+        $('#gradeValue').text(studentData.Grade);
+
+        // Show the result details section
+        $('#resultDetails').removeClass('d-none');
+      }
+
+      // Fetch student data and populate class dropdown
+      $.getJSON('https://script.google.com/macros/s/AKfycbxOgR9ULQRIYeALXRgsTGUN-ip7JcgEDBHvZVn4RMe50Ckz1Lb8Pob3n32qqnRBDt8/exec', function (data) {
+        populateClassDropdown(data);
+
+        // Class dropdown change event
+        $('#classSelect').on('change', function () {
+          const selectedClass = $(this).val();
+          if (selectedClass !== '') {
+            populateStudentDropdown(data, selectedClass);
+          } else {
+            $('#studentSelect').empty().append('<option value="">Select Student</option>');
+            $('#resultDetails').addClass('d-none');
+          }
+        });
+
+        // Student dropdown change event
+        $('#studentSelect').on('change', function () {
+          const selectedClass = $('#classSelect').val();
+          const selectedStudent = $(this).val();
+          if (selectedClass !== '' && selectedStudent !== '') {
+            const studentData = data.find(
+              (student) => student.Class === selectedClass && student["Student's Name "] === selectedStudent
+            );
+            if (studentData) {
+              showResultDetails(studentData);
+            } else {
+              $('#resultDetails').addClass('d-none');
+            }
+          } else {
+            $('#resultDetails').addClass('d-none');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
