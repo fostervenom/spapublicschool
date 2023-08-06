@@ -201,7 +201,8 @@
                 var userNumber = prompt("Please enter your WhatsApp number:");
                 if (userNumber) {
                     var chapterDescription = $(this).closest(".card-body").find(".card-text").text();
-                    var whatsappMessage = encodeURIComponent("Check out this chapter: " + chapterDescription);
+                    var videoLink = $(this).closest(".card-body").find(".watch-btn").data("video");
+                    var whatsappMessage = encodeURIComponent("Check out this chapter: " + chapterDescription + "\nVideo Link: " + videoLink);
                     var whatsappLink = 'https://wa.me/91' + userNumber + '?text=' + whatsappMessage;
                     window.open(whatsappLink, '_blank');
                 }
@@ -209,4 +210,5 @@
         });
     </script>
 </body>
-</html>
+                </html>
+                                                                      
