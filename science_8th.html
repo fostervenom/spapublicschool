@@ -1,56 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Class 8th Science LMS</title>
+    <title>Class 8th Science • Vedanta v1.0 • The LMS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .card {
             margin-bottom: 20px;
         }
-        
+
         .footer-link {
             color: #007bff;
             text-decoration: none;
         }
-        
+
         @media (max-width: 768px) {
             .card {
                 width: 100%;
             }
         }
+
+        .slideshow-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Vedanta v1.0</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="vedantav1.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="science_6th.html">Class 6th</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="science_7th.html">Class 7th</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Class 8th <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="vedanta_dev.html">Contact Teacher</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container mt-5">
-        <h1 id="dynamicHeading">Class 8th Science Learning Management System</h1>
-        <p id="dynamicDescription">Explore the fascinating world of science with these chapters.</p>
+        <h1 id="dynamicHeading">Science for 8th Grade</h1>
+        <p id="dynamicDescription">Explore the fascinating world of science with these chapters.</p><br><br>
+
+        <div class="slideshow-container">
+            <!-- Slides with descriptions -->
+            <div class="slide">
+                <h2>Food Production and Management</h2>
+                <p>Learn about food production and management in this chapter.</p>
+            </div>
+            <div class="slide">
+                <h2>Microorganisms</h2>
+                <p>Explore the world of microorganisms and their significance.</p>
+            </div>
+            <div class="slide">
+                <h2>Materials: Plastic and Synthetic Fibres</h2>
+                <p>Learn about materials, plastics, and synthetic fibers.</p>
+            </div>
+            <div class="slide">
+                <h2>Metals and Non-metals</h2>
+                <p>Explore the properties and characteristics of metals and non-metals.</p>
+            </div>
+            <div class="slide">
+                <h2>Carbon Compounds: Fuels</h2>
+                <p>Discover carbon compounds and their role as fuels.</p>
+            </div>
+            <div class="slide">
+                <h2>Conservation of Wildlife and Plants</h2>
+                <p>Learn about the conservation of wildlife and plants for a sustainable future.</p>
+            </div>
+            <div class="slide">
+                <h2>The Cell</h2>
+                <p>Explore the fundamental unit of life - the cell.</p>
+            </div>
+            <div class="slide">
+                <h2>Reproduction and Development</h2>
+                <p>Learn about reproduction and development in organisms.</p>
+            </div>
+            <div class="slide">
+                <h2>Force, Friction and Pressure</h2>
+                <p>Understand force, friction, and pressure in different contexts.</p>
+            </div>
+            <div class="slide">
+                <h2>Sound</h2>
+                <p>Explore the properties and behavior of sound waves.</p>
+            </div>
+            <div class="slide">
+                <h2>Static Electricity: Electricity charges at rest</h2>
+                <p>Learn about static electricity and electric charges at rest.</p>
+            </div>
+            <div class="slide">
+                <h2>Natural Phenomenon</h2>
+                <p>Discover various natural phenomena and their explanations.</p>
+            </div>
+            <div class="slide">
+                <h2>Light and Human Eye</h2>
+                <p>Learn about light, its properties, and its interaction with the human eye.</p>
+            </div>
+            <div class="slide">
+                <h2>The Universe</h2>
+                <p>Explore the vast universe and its components.</p>
+            </div>
+            <div class="slide">
+                <h2>Air and Water Pollution</h2>
+                <p>Learn about air and water pollution and their impact on the environment.</p>
+            </div>
+        </div>
 
         <div class="row">
             <!-- Chapter Cards -->
@@ -212,17 +271,11 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item popup-video" frameborder="0" allowfullscreen></iframe>
-                    </div>
+                    <iframe class="popup-video" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
-
-    <footer class="footer mt-auto py-3 text-center">
-        <a href="https://www.instagram.com/theadixit" target="_blank" class="footer-link">Crafted by Anurag Reeta Dixit</a>
-    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -249,6 +302,24 @@
             });
         });
     </script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+    </script>
 </body>
-    </html>
+                </html>
                             
