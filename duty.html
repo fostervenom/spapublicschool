@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duty Chart</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  tr.current-day {
+    background-color: green;
+    color: white;
+  }
+  .refresh-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>Duty Chart</h1>
+<table id="dutyTable">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Teachers</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<button class="refresh-button" id="refreshButton">Refresh Data</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  refreshTable();
+
+  function refreshTable() {
+    $.getJSON("https://script.google.com/macros/s/AKfycbzBqn2nTdKELH3Q_3j0nFBtBNI2iTnobMrQVzQyQdx-ovjvZTRXQKcNaXYMwM9Jmj_GkQ/exec", function(data) {
+      var currentDate = new Date().toLocaleDateString("en-US", { weekday: 'long' });
+
+      $("#dutyTable tbody").empty();
+
+      $.each(data, function(index, item) {
+        var $row = $("<tr>")
+          .append($("<td>").text(item.Day))
+          .append($("<td>").text(item.Teachers));
+        
+        if (item.Day === currentDate) {
+          $row.addClass("current-day");
+        }
+
+        $("#dutyTable tbody").append($row);
+      });
+    });
+  }
+
+  $("#refreshButton").click(function() {
+    refreshTable();
+  });
+});
+</script>
+</body>
+</html>
