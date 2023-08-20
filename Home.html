@@ -93,11 +93,52 @@
     </section>
     <section class="u-align-center u-black u-clearfix u-section-2" id="sec-862d">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-center u-text u-text-1">Unit Test - 1st<span style="font-weight: 700;"></span>
-        </h1>
-        <p class="u-align-center u-text u-text-2"> <b>"Congratulations</b> to all students of batch 2023 & 24 for completing the 1st Unit Test in July 2023. Results are out! Check your marks now!"<br><br><br>
-                </p>
-        <h1 class="u-align-center u-text u-text-default u-text-3"><a href="results.html" title="Check Now" target="_blank" align="center"><img src="images/apply.png" align="center" width="25%"></img></a> </h1>
+	    
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  #countdown {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+</style>
+
+  <div id="player"></div>
+  <div id="countdown"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    const videoLink = "https://www.youtube.com/embed/DLA_64yz8Ss?autoplay=1";
+
+    // Set the end time of the countdown (23rd August 2023, 17:27 IST)
+    const countdownEndTime = new Date("2023-08-23T17:27:00+05:30").getTime();
+
+    // Update the countdown every second
+    const countdownInterval = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countdownEndTime - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "The livestream has started!";
+      }
+    }, 1000);
+
+    // Embed the YouTube player
+    const embedCode = `<iframe width="560" height="315" src="${videoLink}" frameborder="0" allowfullscreen></iframe>`;
+    $("#player").html(embedCode);
+  </script>
       </div>
     </section>
     <section class="u-clearfix u-section-3" id="sec-a899">
