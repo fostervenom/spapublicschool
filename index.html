@@ -2,10 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="5;url=https://fostervenom.github.io/spapublicschool/Chandrayaan-3.html">
-<title>Redirecting...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.P.A. Public School</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  #centeredImage {
+    max-width: 100%; /* Ensures the image doesn't exceed its container */
+    height: auto; /* Maintains the image's aspect ratio */
+  }
+</style>
+
 </head>
 <body>
-<p>Redirecting to ISRO's Lunar Mission - Chandrayaan-3's Live Stream, Jai Hind! If you are not redirected, <a href="https://fostervenom.github.io/spapublicschool/Chandrayaan-3.html">click here</a>.</p>
+<img id="centeredImage" src="https://fostervenom.github.io/spapublicschool/icon.png" alt="Centered Image">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    setTimeout(function() {
+      window.location.href = "https://fostervenom.github.io/spapublicschool/Home.html";
+    }, 3000);
+  });
+</script>
 </body>
 </html>
